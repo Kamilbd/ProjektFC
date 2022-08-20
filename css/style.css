@@ -9,7 +9,6 @@ html {
 	font-size: 1.2rem;
 }
 body {
-	height: calc(100vh);
 	font-family: 'roboto', sans-serif;
 }
 .container {
@@ -18,6 +17,10 @@ body {
 }
 nav {
 	background-color: aliceblue;
+}
+nav p {
+	font-size: 1.2rem;
+	font-weight: bold;
 }
 
 nav a {
@@ -34,39 +37,40 @@ nav a {
 	padding: 0 10px;
 }
 .nav-links a:nth-of-type(3) {
+	padding-right: 0;
 	cursor: not-allowed;
 }
 header {
 	position: relative;
-}
-.header-img {
-	position: absolute;
-	height: 800px;
-	width: 100%;
+	height: calc(100vh - 50px);
 	background-image: url(../img/mountain-1920.jpg);
 	background-size: cover;
-	background-position: 50% 0%;
-	z-index: -1;
+	background-position: 0 20%;
+	z-index: 0;
 }
+
 .header-shadow {
-	height: 800px;
+	position: absolute;
+	width: 100%;
+	height: 100%;
 	background-color: rgb(0, 0, 0, 0.3);
+	z-index: -2;
 }
 .header {
 	padding: 0 10px;
-	height: 800px;
+	height: calc(100vh - 50px);
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
 	font-weight: 700;
-	z-index: 1;
+	z-index: -1;
 }
 .header-text {
-	width: 500px;
+	width: 600px;
 	color: white;
 }
-.header-text h2 {
-	font-size: 1.6rem;
+.header-text h1 {
+	font-size: 2.2rem;
 }
 .header-text p {
 	padding: 40px 0;
@@ -80,9 +84,16 @@ header {
 	border: 3px solid white;
 	color: white;
 	transition: 1s background-color, 1s color;
+	cursor: pointer;
+	transition: 1s;
 }
+
 .about-us {
 	padding: 50px;
+}
+.about-us h2 {
+	font-weight: bold;
+	font-size: 2rem;
 }
 .aboutus-box {
 	padding-top: 50px;
@@ -115,6 +126,9 @@ header {
 	flex-direction: row-reverse;
 	text-align: end;
 }
+.about-us h3 {
+	font-weight: bold;
+}
 .offer-section {
 	padding: 50px 0;
 	background-color: #405d78;
@@ -122,6 +136,7 @@ header {
 .offer-section h2 {
 	padding-bottom: 50px;
 	font-size: 2rem;
+	font-weight: bold;
 	text-align: left;
 	color: white;
 }
@@ -152,8 +167,8 @@ header {
 }
 .dot {
 	position: absolute;
-	left: -5%;
-	top: -5%;
+	left: -15px;
+	top: -15px;
 	width: 30px;
 	height: 30px;
 	background-color: #e07a64;
@@ -174,25 +189,28 @@ footer {
 	padding: 10px;
 	cursor: pointer;
 }
+.fa-square-facebook {
+	padding-right: 0;
+}
 
 @media screen and (min-width: 375px) and (max-width: 768px) {
 	nav {
 		padding: 0 10px;
 	}
-	nav h1 {
+	nav p {
 		font-size: 1rem;
 	}
 	.nav-links {
 		display: none;
 	}
-	.header-img {
-		height: 550px;
+	header {
+		background-position: 40% 0;
 	}
 	.header-shadow {
-		height: 550px;
+		height: 100%;
 	}
-	.header {
-		height: 550px;
+	.header-text h1 {
+		font-size: 1.6rem;
 	}
 	.about-us {
 		padding: 50px 10px;
@@ -257,6 +275,7 @@ footer {
 		background-color: white;
 		color: black;
 	}
+
 	.offer-square:hover {
 		transform: scale(1.05);
 	}
